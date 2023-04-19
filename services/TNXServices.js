@@ -8,7 +8,7 @@ class TNXServices {
 	constructor(){
 		this.fileName = path.join(__dirname, "../tmpData/limitUsername.json");
 		this.limitRecord = 20;
-		this.dayPerPage = 20;
+		this.dayPerPage = 2;
 		this.limitDuplicateUsername = 20;
 	}
     async getDurationPerPage(page){

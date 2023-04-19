@@ -16,6 +16,8 @@ C. Explain for each request
 		limit = 100000
 		offset = (page - 1)*limit
 		etc...
+		With requirement sort asc by timestamp, I make an an algorithm getDurationPerPage that generate startDate, endDate by increase 2 days continuously and use it to generate ts.
+		Why 2days? Just thought that from 2019-2021. 3years: 365*3 = 1095 days. So with 500 pages, each page is generate ts between 1095/500 ~ 2days.
 
 	Request2: simple, no need explain
 	Request3: simple, no need explain

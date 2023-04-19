@@ -110,13 +110,13 @@ class elasticSearchTNXServices {
         return await client.indices.delete(params);
     }
 
-    async updateTNX() {
+    async updateTNX(page) {
         if (!this.checkExist(this.index)) {
             throw new Error("Index not exist");
             return false;
         }
         
-        let list = await this._getListTNX();
+        let list = await this._getListTNX(page);
         console.log("list", list);
         if(list){
             let timeStart = Date.now();
@@ -178,9 +178,9 @@ class elasticSearchTNXServices {
         console.log('no TNX found >>>>');
     }
 
-    async _getListTNX(){
+    async _getListTNX(page){
         const TNXSv = new TNXServices();
-        const {startDate, endDate} = await TNXSv.getDurationPerPage(1);
+        const {startDate, endDate} = await TNXSv.getDurationPerPage(page);
         const timestamps = await TNXSv.getRandomTimeByDuration(startDate, endDate);
         const list = await TNXSv.generateTNXObject(timestamps);
         return list;
