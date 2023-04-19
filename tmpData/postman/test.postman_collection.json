@@ -16,6 +16,16 @@
 						"value": "{{access_token}}"
 					}
 				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "page",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
 				"url": {
 					"raw": "https://devapi.teefi.io/khanh/request1",
 					"protocol": "https",
@@ -54,7 +64,7 @@
 					]
 				},
 				"url": {
-					"raw": "https://devapi.teefi.io/khanh/request1",
+					"raw": "https://devapi.teefi.io/khanh/request2",
 					"protocol": "https",
 					"host": [
 						"devapi",
@@ -63,7 +73,7 @@
 					],
 					"path": [
 						"khanh",
-						"request1"
+						"request2"
 					]
 				},
 				"description": "Get doctor information base on doctor ID"
