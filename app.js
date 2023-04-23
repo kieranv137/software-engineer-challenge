@@ -24,7 +24,8 @@ app.use(bodyParser.json({limit: '50mb'}));
 app.use(cors());
 
 app.use(require("./routers"));
-
+app.use('/images', express.static('tmpData'));
+app.engine('html', require('ejs').renderFile);
 /**
  * Start Express server.
  */

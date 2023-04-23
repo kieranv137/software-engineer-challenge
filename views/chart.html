@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  </head>
+  <body>
+    <div id="chart"></div>
+    <script>
+      const athletes = [
+        {"year": 1912, "height": 1.60, "athlete": "khanh"},
+        {"year": 1919, "height": 1.63, "athlete": "khanh1"},
+        {"year": 1922, "height": 1.64, "athlete": "khanh2"}
+      ]
+      let chartData = '';
+      athletes.forEach((athlete) => {
+        chartData += `{ x: ${athlete.year}, y: ${athlete.record}, label: "${athlete.name}" }, `;
+      });
+      const chart = new ApexCharts(document.querySelector("#chart"), {
+        series: [{
+          data: chartData
+        }],
+        chart: {
+          type: 'line',
+          height: 350
+        },
+        xaxis: {
+          type: 'numeric',
+          title: {
+            text: 'Year'
+          }
+        },
+        yaxis: {
+          title: {
+            text: 'Record (m)'
+          }
+        },
+        annotations: {
+          points: [
+            {x: 1912, y: 1.60, label: { text: "khanh"}},
+            {x: 1919, y: 1.63, label: { text: "khanh1"}},
+            {x: 1922, y: 1.64, label: { text: "khanh2"}}
+          ]
+        }
+      });
+
+      chart.render();
+    </script>
+  </body>
+</html>
