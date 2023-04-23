@@ -16,7 +16,7 @@ router
     const dataSv = new dataServices();
     const worldRecordData = await dataSv.get(url);
 
-    //step 1: use customize data to build line chart and res as image
+    //step 2: use customize data to build line chart and res as image
     const chartSv = new chartServices();
     const canvas = chartSv.createLineChart(worldRecordData, 2000, 1500);
     res.set('Content-Type', 'image/png');
